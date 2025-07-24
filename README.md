@@ -13,10 +13,8 @@ argument is a length of one of the four sides of the quadrilateral.
 Define an instance method, `#kind` that returns, as a symbol, its
 type. The valid types are:
 
-- `:square` - all sides equal, all angles 90°
-- `:rectangle` - opposite sides equal, all angles 90°
-- `:rhombus` - all sides equal, opposite angles equal
-- `:parallelogram` - opposite sides equal and parallel
+- `:square` - all sides equal
+- `:rectangle` - opposite sides equal
 - `:quadrilateral` - any valid four-sided figure
 
 The `#kind` method should raise a custom error, `SquareError` if the quadrilateral
@@ -49,7 +47,6 @@ A valid quadrilateral must meet the following criteria:
 
 - Each side must be larger than 0.
 - The sum of the lengths of any three sides must exceed the length of the fourth side.
-- All interior angles must sum to 360 degrees.
 
 ## Resources
 
