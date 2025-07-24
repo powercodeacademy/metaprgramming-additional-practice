@@ -1,57 +1,57 @@
-# Triangle Classification Lab
+# Square Classification Lab
 
 ## Learning Goals
 
 - Define a custom error class and use it
+- Work with geometric properties and validation
 
 ## Instructions
 
-Write a `Triangle` class that accepts three arguments on initialization. Each
-argument is a length of one of the three sides of the triangle.
+Write a `Square` class that accepts four arguments on initialization. Each
+argument is a length of one of the four sides of the quadrilateral.
 
 Define an instance method, `#kind` that returns, as a symbol, its
 type. The valid types are:
 
-- `:equilateral`
-- `:isosceles`
-- `:scalene`
+- `:square` - all sides equal, all angles 90°
+- `:rectangle` - opposite sides equal, all angles 90°
+- `:rhombus` - all sides equal, opposite angles equal
+- `:parallelogram` - opposite sides equal and parallel
+- `:quadrilateral` - any valid four-sided figure
 
-![Triangle types](https://curriculum-content.s3.amazonaws.com/module-1/ruby-metaprogramming/triangle-classification-lab/Image_141_MathematicalTriangles.png)
+The `#kind` method should raise a custom error, `SquareError` if the quadrilateral
+is invalid. Check out the hint below to understand what makes a quadrilateral valid.
 
-The `#kind` method should raise a custom error, `TriangleError` if the triangle
-is invalid. Check out the hint below to understand what makes a triangle valid.
-
-Write a custom error class, `TriangleError` and inherit it from `StandardError`.
-This custom error class should be defined in the same file as the `Triangle`
-class, inside the `Triangle` class definition, like this:
+Write a custom error class, `SquareError` and inherit it from `StandardError`.
+This custom error class should be defined in the same file as the `Square`
+class, inside the `Square` class definition, like this:
 
 ```ruby
-# lib/triangle.rb
+# lib/square.rb
 
-class Triangle
-  # triangle code
+class Square
+  # square code
 
-  class TriangleError < StandardError
-    # triangle error code
+  class SquareError < StandardError
+    # square error code
   end
 end
 ```
 
-**Note**: Several of the tests will be looking for the `TriangleError` to be
+**Note**: Several of the tests will be looking for the `SquareError` to be
 raised. If you implement a `rescue` for it, however, the tests will not
 recognize that the error was raised. For purposes of this lab, therefore, you
 should not include a `rescue`.
 
-## Identifying Valid Triangles
+## Identifying Valid Quadrilaterals
 
-A valid triangle must meet the following criteria:
+A valid quadrilateral must meet the following criteria:
 
 - Each side must be larger than 0.
-
-- The sum of the lengths of any two sides of a triangle always exceeds the length
-  of the third side. This is a principle known as the _triangle inequality_.
+- The sum of the lengths of any three sides must exceed the length of the fourth side.
+- All interior angles must sum to 360 degrees.
 
 ## Resources
 
 - [Exception Handling](http://www.skorks.com/2009/09/ruby-exceptions-and-exception-handling/)
-- [Basic Mathematics](http://www.basic-mathematics.com/) - [Types of Triangles](http://www.basic-mathematics.com/types-of-triangles.html)
+- [Basic Mathematics](http://www.basic-mathematics.com/) - [Types of Quadrilaterals](http://www.basic-mathematics.com/types-of-quadrilaterals.html)
